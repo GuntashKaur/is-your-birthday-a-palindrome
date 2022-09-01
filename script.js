@@ -135,10 +135,32 @@ function getNextPalindromeDate(date){
 
 }
 
-var date = {
-    day: 31,
-    month: 12,
-    year: 2020
-};
+var dateInputRef = document.querySelector("#bday-input");
+var showbtn = document.querySelector("#show-btn");
+var resultRef = document.querySelector("#result");
 
-console.log(getNextPalindromeDate(date));
+function clickHandler(){
+    var bdayStr = dateInputRef.value;
+
+
+    if(bdayStr !== ''){
+        var listOfDate = bdayStr.split('-');
+        var date = {
+            day : Number(listOfDate[2]),
+            month: Number(listOfDate[1]),
+            year: Number(listOfDate[0])
+        };
+
+        var isPalindrome = checkPalindromeForAllDateFormats(date);
+
+        if(isPalindrome){
+            resultRef.innerText = "Your birthday is a Palindrome";
+        }
+        else{
+            var [ctr, nextDate] = getNextPalindromeDate(date);
+            resultRef.innerText = `The next Plaindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${ctr} days!` 
+        }
+    }
+}
+
+showbtn.addEventListener("click", clickHandler);

@@ -1,0 +1,38 @@
+.container{
+    
+    display: block;
+    margin: auto;
+    width: 700px;
+    text-align: center;
+    margin-top: 40px;
+    border: 2px solid royalblue;
+    height: 500px;
+   
+}
+
+h1{
+    color: royalblue;
+}
+
+#bday-input{
+    width:200px;
+    height: 30px;
+    color: royalblue;
+    border: 2px solid royalblue;
+
+}
+
+
+button{
+    height: 30px;
+    width:90px;
+    background-color: royalblue;
+    color:white;
+    border: none;
+   
+}
+
+p{
+    color:royalblue;
+    font-size: larger;
+}
